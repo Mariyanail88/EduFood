@@ -1,0 +1,158 @@
+.restaurant-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh; /* Ensure the page takes up the full viewport height */
+    justify-content: center; /* Center content vertically */
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.home-button {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+}
+
+.restaurant-content {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.restaurant-logo {
+    flex: 1.5; /* Increase the flex value to give more space to the logo container */
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+    max-width: 600px; /* Set a larger maximum width */
+    height: auto; /* Allow height to adjust automatically */
+    margin-right: 30px; /* Add space to the right of the logo */
+}
+
+.restaurant-logo img {
+    width: 100%; /* Make the image fill its container */
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 80vh; /* Limit height to a percentage of the viewport height */
+}
+
+.menu-items {
+    flex: 2; /* Menu takes up 2/3 of the page */
+    padding: 20px;
+}
+
+.restaurant-title {
+    font-size: 3em; /* Increase the font size */
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center; /* Center the title */
+    font-weight: bold; /* Make the text bold */
+    text-transform: uppercase; /* Transform text to uppercase */
+    letter-spacing: 2px; /* Add some letter spacing */
+    border-bottom: 2px solid #007bff; /* Add a bottom border */
+    padding-bottom: 10px; /* Add some padding at the bottom */
+}
+
+.menu-title {
+    font-size: 2em; /* Smaller than the main title */
+    color: #555; /* Different color */
+    margin-bottom: 15px;
+    text-align: left; /* Align to the left */
+    font-weight: normal; /* Normal weight */
+    text-transform: none; /* No text transformation */
+    letter-spacing: 1px; /* Less letter spacing */
+    border-bottom: 1px solid #ccc; /* Lighter bottom border */
+    padding-bottom: 5px; /* Less padding at the bottom */
+}
+
+.menu-item {
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.menu-item h3 {
+    margin-top: 0;
+}
+
+.menu-item p {
+    margin: 5px 0;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.page-item {
+    margin: 0 5px;
+}
+
+.page-item.active .page-link {
+    background-color: #007bff;
+    color: white;
+}
+
+.page-link {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.page-link:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.restaurant-info {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+
+.restaurant-info h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.restaurant-info p {
+    margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    .restaurant-logo {
+        flex: 1; /* Adjust for smaller screens */
+    }
+
+    .restaurant-logo img {
+        max-height: 50vh; /* Reduce height on smaller screens */
+    }
+}

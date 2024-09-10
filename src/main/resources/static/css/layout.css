@@ -1,0 +1,69 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: #343a40; /* Dark background for the navbar */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff; /* White color for the brand */
+}
+
+.nav-link {
+    color: #ffffff; /* White color for the links */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.nav-link:hover {
+    color: #adb5bd; /* Light gray color on hover */
+}
+
+.text-light {
+    font-size: 1rem;
+    color: #f8f9fa; /* Light color for the text */
+}
+
+.text-danger {
+    color: #dc3545; /* Red color for roles */
+    font-weight: bold;
+}
+
+.text-info {
+    color: #17a2b8; /* Blue color for actions */
+    font-weight: bold;
+}
+
+.btn-outline-info {
+    color: #17a2b8;
+    border-color: #17a2b8;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.btn-outline-info:hover {
+    background-color: #17a2b8;
+    color: #ffffff; /* White color on hover */
+}
+
+.container {
+    margin-top: 20px; /* Space between navbar and content */
+}
+
+.m-2 {
+    margin: 0.5rem !important;
+}
+
+.m-sm-0 {
+    margin: 0 !important;
+}
+
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+
+    .text-light {
+        font-size: 0.875rem;
+    }
+}
