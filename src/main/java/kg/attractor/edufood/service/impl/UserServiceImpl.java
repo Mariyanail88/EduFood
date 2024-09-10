@@ -29,7 +29,7 @@ import java.util.stream.Collectors;
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
-    private final UserMapper userMapper = UserMapper.INSTANCE;
+    private final UserMapper userMapper;
     private final PasswordEncoder encoder;
     @Value("${app.user_not_found_with_id}")
     private String userByIdNotFound;
@@ -90,15 +90,13 @@ public class UserServiceImpl implements UserService {
         String encodedPassword = encoder.encode(userDto.getPassword());
         userDto.setPassword(encodedPassword);
 
-        // Log the encoded password
         log.info("Encoded password for user {}: {}", userDto.getEmail(), encodedPassword);
 
         User user = userMapper.toUser(userDto);
 
-        // Initialize roles collection if null
         user.setRoles(initializeCollectionIfNull(user.getRoles()));
 
-        // Assign the AUTHORIZED_USER role to the new user
+
         Role authorizedUserRole = roleRepository.findByRoleName("AUTHORIZED_USER").orElseThrow(
                 () -> new NoSuchElementException("Role AUTHORIZED_USER not found")
         );

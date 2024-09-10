@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 @Component
 @RequiredArgsConstructor
 public class CustomRestaurantMapper  {
-    private final MenuItemMapper menuItemMapper = MenuItemMapper.INSTANCE;
+    private final MenuItemMapper menuItemMapper;
 
 
     public RestaurantDto toRestaurantDto(Restaurant restaurant) {

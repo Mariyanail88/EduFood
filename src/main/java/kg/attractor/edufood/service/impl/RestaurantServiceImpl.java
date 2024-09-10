@@ -22,7 +22,7 @@ import java.util.List;
 public class RestaurantServiceImpl implements RestaurantService {
 
     private final RestaurantRepository restaurantRepository;
-    private final RestaurantMapper restaurantMapper = RestaurantMapper.INSTANCE;
+    private final RestaurantMapper restaurantMapper;
     private final CustomRestaurantMapper customRestaurantMapper;
 
     @Override
@@ -44,8 +44,7 @@ public class RestaurantServiceImpl implements RestaurantService {
     @Override
     public RestaurantDto getRestaurantById(Long id) {
         Restaurant restaurant = restaurantRepository.findById(id).orElseThrow(RestaurantNotFoundException::new);
-        // MapStruct не подхватывает restaurant_id, поэтом пришлось сделать кастомный мэппер
-        return customRestaurantMapper.toRestaurantDto(restaurant);
+        return restaurantMapper.toRestaurantDto(restaurant);
     }
 
     @Override

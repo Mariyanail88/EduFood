@@ -5,11 +5,9 @@ import kg.attractor.edufood.entity.Restaurant;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;
-import org.mapstruct.factory.Mappers;
-//, uses = MenuItemMapper.class
-@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
+
+@Mapper(componentModel = "spring", uses = MenuItemMapper.class, unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface RestaurantMapper {
-    RestaurantMapper INSTANCE = Mappers.getMapper(RestaurantMapper.class);
 
     @Mapping(source = "menuItems", target = "menuItems")
     RestaurantDto toRestaurantDto(Restaurant restaurant);
