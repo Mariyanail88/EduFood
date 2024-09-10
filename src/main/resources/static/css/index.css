@@ -1,0 +1,152 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(233, 236, 239, 0.5); /* More UI-friendly background color */
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Ensure the body takes the full height of the viewport */
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center;
+    flex-grow: 1; /* Allow the main content to grow and take up available space */
+    padding: 0; /* Remove any padding */
+    margin: 0; /* Remove any margin */
+}
+
+.welcome-container {
+    text-align: center;
+    padding: 20px; /* Adjusted padding */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+    margin-bottom: 20px; /* Add margin to separate from restaurants-container */
+}
+
+.welcome-header {
+    margin-bottom: 20px; /* Adjusted margin */
+}
+
+.welcome-header h1 {
+    font-size: 2.5em; /* Adjusted font size */
+    color: #343a40;
+}
+
+.welcome-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px; /* Adjusted margin */
+}
+
+.welcome-links {
+    margin-top: 20px; /* Adjusted margin */
+}
+
+.welcome-links .btn {
+    margin: 10px; /* Adjusted margin */
+    padding: 15px 30px; /* Adjusted padding */
+    font-size: 1.2em; /* Adjusted font size */
+    text-decoration: none; /* Ensure no underline */
+    display: inline-block; /* Ensure buttons are inline-block */
+    transition: background-color 0.3s, border-color 0.3s; /* Smooth transition for hover effects */
+}
+
+.welcome-links .btn-primary {
+    background-color: #7bc323;
+    border-color: #b0ea69;
+    color: #fff;
+}
+
+.welcome-links .btn-primary:hover {
+    background-color: #1ebd2b;
+    border-color: #1ebd2b;
+}
+
+.welcome-links .btn-secondary {
+    background-color: #6c757d; /* Grey color for "View Resumes" button */
+    border-color: #6c757d;
+    color: #fff;
+}
+
+.welcome-links .btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+.restaurants-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.restaurant-card {
+    flex: 1 1 calc(20% - 10px); /* 20% width minus some margin */
+    box-sizing: border-box;
+    margin: 5px;
+    max-width: calc(20% - 10px); /* Ensure max-width is the same as flex-basis */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and box-shadow */
+    border: 1px solid #ddd; /* Optional: Add a border to the card */
+    border-radius: 10px; /* Optional: Add rounded corners to the card */
+    overflow: hidden; /* Ensure content doesn't overflow the card */
+    background-color: #fff; /* Optional: Set a background color for the card */
+}
+
+.restaurant-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow on hover */
+}
+
+.restaurant-card img {
+    width: 100%;
+    height: 200px; /* Set a fixed height for all images */
+    object-fit: cover; /* Ensure the image covers the entire area while maintaining aspect ratio */
+    border-bottom: 1px solid #ddd; /* Optional: Add a border to separate the image from the text */
+}
+
+.restaurant-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.restaurant-info h2 {
+    font-size: 1.5em; /* Set the font size for the heading */
+    margin: 10px 0; /* Add margin around the heading */
+    color: #333; /* Set the text color for the heading */
+}
+
+.restaurant-info p {
+    font-size: 1em; /* Set the font size for the paragraphs */
+    margin: 5px 0; /* Add margin around the paragraphs */
+    color: #666; /* Set the text color for the paragraphs */
+}
+
+.pagination {
+    margin-top: 20px;
+}
+
+.pagination .btn {
+    margin: 0 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.pagination .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: #fff;
+}
+
+.pagination .btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
