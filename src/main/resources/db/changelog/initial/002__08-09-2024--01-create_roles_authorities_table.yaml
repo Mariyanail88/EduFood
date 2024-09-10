@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create intermediate table for roles <-> authorities
+      author: Mari
+      preConditions:
+        - onFail: MARK_RAN
+          not:
+            tableExists:
+              tableName: roles_authorities
+              schemaName: public
+      changes:
+        - createTable:
+            tableName: roles_authorities
+            columns:
+              - column:
+                  name: role_id
+                  type: long
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    foreignKeyName: fk_role_id_to_authorities
+                    references: roles(id)
+              - column:
+                  name: authority_id
+                  type: long
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    foreignKeyName: fk_authority_id_to_roles
+                    references: authorities(id)

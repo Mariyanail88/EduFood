@@ -1,0 +1,53 @@
+databaseChangeLog:
+  - changeSet:
+      id: create table for order items
+      author: Mari
+      preConditions:
+        - onFail: MARK_RAN
+          not:
+            tableExists:
+              tableName: order_items
+              schemaName: public
+      changes:
+        - createTable:
+            tableName: order_items
+            columns:
+              - column:
+                  name: id
+                  type: long
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: order_id
+                  type: UUID
+                  constraints:
+                    nullable: false
+              - column:
+                  name: menu_item_id
+                  type: long
+                  constraints:
+                    nullable: false
+              - column:
+                  name: quantity
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: DECIMAL(10, 2)
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: order_items
+            baseColumnNames: order_id
+            referencedTableName: orders
+            referencedColumnNames: id
+            constraintName: fk_order_items_order
+        - addForeignKeyConstraint:
+            baseTableName: order_items
+            baseColumnNames: menu_item_id
+            referencedTableName: menu_items
+            referencedColumnNames: id
+            constraintName: fk_order_items_menu_item

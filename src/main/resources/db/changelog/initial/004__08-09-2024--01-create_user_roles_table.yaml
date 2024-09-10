@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create intermediate table for usr <-> roles
+      author: Mari
+      preConditions:
+        - onFail: MARK_RAN
+          not:
+            tableExists:
+              tableName: user_roles
+              schemaName: public
+      changes:
+        - createTable:
+            tableName: user_roles
+            columns:
+              - column:
+                  name: user_id
+                  type: long
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    foreignKeyName: fk_user_email_to_roles
+                    references: users(id)
+              - column:
+                  name: role_id
+                  type: long
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    foreignKeyName: fk_role_id_to_user
+                    references: roles(id)
